@@ -60,7 +60,7 @@
   "plazo": "No disponible",
   "minimo": "RD$10,000",
   "minimo_num": 10000,
-  "pago": "No especificado",
+  "pago": "A vencimiento",
   "moneda": "Pesos (RD$)",
   "fecha": "2026-10-15"
  },
@@ -86,19 +86,6 @@
   "plazo": "120 días",
   "minimo": "RD$50,000",
   "minimo_num": 50000,
-  "pago": "A vencimiento",
-  "moneda": "Pesos (RD$)",
-  "fecha": "2026-10-15"
- },
- {
-  "id": "santa-cruz-flexi",
-  "puesto": "Inversiones Santa Cruz",
-  "producto": "Flexi - Plazo Más DOP",
-  "tipo": "SBB con Mutuo",
-  "rent": 8.8,
-  "plazo": "120 días (30 a 280)",
-  "minimo": "RD$100,000",
-  "minimo_num": 100000,
   "pago": "A vencimiento",
   "moneda": "Pesos (RD$)",
   "fecha": "2026-10-15"
@@ -134,10 +121,23 @@
   "puesto": "CCI Puesto de Bolsa",
   "producto": "Mutuo en pesos",
   "tipo": "SBB con Mutuo",
-  "rent": 6.0,
+  "rent": 6,
   "plazo": "120 días",
   "minimo": "RD$500,000",
   "minimo_num": 500000,
+  "pago": "A vencimiento",
+  "moneda": "Pesos (RD$)",
+  "fecha": "2026-10-15"
+ },
+ {
+  "id": "santa-cruz-flexi",
+  "puesto": "Inversiones Santa Cruz",
+  "producto": "Flexi - Plazo Más DOP",
+  "tipo": "SBB con Mutuo",
+  "rent": 8.8,
+  "plazo": "120 días (30 a 280)",
+  "minimo": "RD$100,000",
+  "minimo_num": 100000,
   "pago": "A vencimiento",
   "moneda": "Pesos (RD$)",
   "fecha": "2026-10-15"
