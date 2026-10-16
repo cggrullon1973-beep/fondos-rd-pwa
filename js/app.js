@@ -465,7 +465,13 @@
     document.querySelectorAll('.fx .tabs button').forEach(function (b) { b.setAttribute('aria-selected', b.dataset.pg === id ? 'true' : 'false'); });
     dash.setLink(id);
   }
-  document.querySelectorAll('.fx .tabs button').forEach(function (b) { b.addEventListener('click', function () { showPage(b.dataset.pg); }); });
+  document.querySelectorAll('.fx .tabs button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var cambia = b.getAttribute('aria-selected') !== 'true';
+      showPage(b.dataset.pg);
+      if (cambia) window.scrollTo(0, 0);
+    });
+  });
   var h0 = location.hash.slice(1), pg0 = h0 ? document.getElementById(h0) : null;
   if (pg0 && pg0.classList.contains('pg')) showPage(h0);
 

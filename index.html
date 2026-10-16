@@ -2,11 +2,12 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
 <title>Inversiones RD</title>
 <meta name="description" content="Fondos de inversión, puestos de bolsa y bonos en República Dominicana, con calculadoras de ganancia. Datos de Rexi actualizados cada mañana.">
-<meta name="theme-color" content="#1d6b5a" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#121311" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f7f8fa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1113" media="(prefers-color-scheme: dark)">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icons/icon-192.png" type="image/png">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
@@ -20,19 +21,23 @@
 <div class="fx" id="fx-root">
 
 
-<header id="encabezado">
-  <div class="hdr"><h1>Inversiones en RD</h1><button type="button" id="btn-instalar" class="btn" hidden>Instalar app</button></div>
-  <p class="upd" id="upd">Cargando datos…</p>
-  <p class="offline" id="offline" hidden>Sin conexión: estás viendo los últimos datos guardados.</p>
-  <nav class="tabs" role="tablist">
-    <button type="button" role="tab" id="tab-fondos" data-pg="pg-fondos" aria-selected="true">Fondos de inversión</button>
-    <button type="button" role="tab" id="tab-puestos" data-pg="pg-puestos" aria-selected="false">Puestos de bolsa</button>
-    <button type="button" role="tab" id="tab-bonos" data-pg="pg-bonos" aria-selected="false">Bonos</button>
+<header id="encabezado" class="appbar">
+  <div class="hdr">
+    <div class="brand">
+      <span class="logo" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l5-5 4 4 7-8"/><path d="M15 8h5v5"/></svg></span>
+      <div><h1>Inversiones RD</h1><p class="upd" id="upd">Cargando datos…</p></div>
+    </div>
+    <button type="button" id="btn-instalar" class="btn" hidden>Instalar app</button>
+  </div>
+  <nav class="tabs" role="tablist" aria-label="Secciones">
+    <button type="button" role="tab" id="tab-fondos" data-pg="pg-fondos" aria-selected="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5M4 19h16M8 15l4-4 3 3 5-6"/></svg><span>Fondos</span></button>
+    <button type="button" role="tab" id="tab-puestos" data-pg="pg-puestos" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg><span>Puestos de bolsa</span></button>
+    <button type="button" role="tab" id="tab-bonos" data-pg="pg-bonos" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M7 10h6M7 14h4"/></svg><span>Bonos</span></button>
   </nav>
 </header>
+<p class="offline" id="offline" hidden>Sin conexión: estás viendo los últimos datos guardados.</p>
 
 <div id="pg-fondos" class="pg">
-<p class="take">Mejor abierto hoy: <b data-source="resumen" data-field="mejor_abierto" data-row="0">—</b> (<b data-source="resumen" data-field="rent_abierto" data-row="0" data-fmt="pct">—</b>). Mejor cerrado: <b data-source="resumen" data-field="mejor_cerrado" data-row="0">—</b> (<b data-source="resumen" data-field="rent_cerrado" data-row="0" data-fmt="pct">—</b>).</p>
 
 <section id="resumen" class="tiles">
   <div class="card"><div class="lbl">Mejor fondo abierto</div><div class="big" data-source="resumen" data-field="rent_abierto" data-row="0" data-fmt="pct">—</div><div class="sub" data-source="resumen" data-field="mejor_abierto" data-row="0">—</div></div>
@@ -50,7 +55,7 @@
 
 <section id="calc-cf" class="card calc">
   <h2>Calculadora de fondos: ¿cuánto ganarías?</h2>
-  <p class="note">Usa la rentabilidad de los últimos 12 meses como si se repitiera, con interés compuesto. Es una estimación: un fondo no garantiza su rentabilidad y la de mañana puede ser otra. Solo entran en las 10 mejores los fondos cuyo aporte mínimo y permanencia encajan con tu monto y plazo.</p>
+  <details class="more"><summary>Cómo se calcula</summary><p>Usa la rentabilidad de los últimos 12 meses como si se repitiera, con interés compuesto. Es una estimación: un fondo no garantiza su rentabilidad y la de mañana puede ser otra. Solo entran en las 10 mejores los fondos cuyo aporte mínimo y permanencia encajan con tu monto y plazo.</p></details>
   <div class="calc-in">
     <label class="fld"><span class="lbl">Monto a invertir (RD$)</span><input type="number" id="cf-monto" min="0" step="1000" value="100000" inputmode="numeric"></label>
     <label class="fld"><span class="lbl">Plazo</span><span class="row2"><input type="number" id="cf-plazo" min="1" step="1" value="1" inputmode="numeric"><select id="cf-unidad" aria-label="Unidad del plazo"><option value="d">días</option><option value="m">meses</option><option value="a" selected>años</option></select></span></label>
@@ -111,7 +116,7 @@
 
 <section id="estructurados" class="card">
   <h2>Productos estructurados de los puestos</h2>
-  <p class="note">Tasas anuales estimadas por Rexi, en pesos, a 120 días salvo que se indique; pueden cambiar sin aviso. En un SBB el puesto vende un título y se compromete a recomprarlo en una fecha y a un precio acordados. En un SBB con Mutuo el puesto toma prestado el título durante el plazo: rinde más, pero hay más riesgo y no hay una garantía que se pueda liquidar si el puesto incumple. Los productos en dólares no se muestran aquí.</p>
+  <p class="note">Tasas anuales estimadas por Rexi, en pesos, a 120 días salvo que se indique; pueden cambiar sin aviso.</p><details class="more"><summary>Qué debes saber</summary><p>En un SBB el puesto vende un título y se compromete a recomprarlo en una fecha y a un precio acordados. En un SBB con Mutuo el puesto toma prestado el título durante el plazo: rinde más, pero hay más riesgo y no hay una garantía que se pueda liquidar si el puesto incumple. Los productos en dólares no se muestran aquí.</p></details>
   <div class="bar"><label class="lbl" for="p-tipo">Tipo</label>
     <select id="p-tipo"><option value="todos">Todos</option><option value="SBB">SBB</option><option value="SBB con Mutuo">SBB con Mutuo</option></select></div>
   <div class="scroll">
@@ -132,7 +137,7 @@
 
 <section id="calc-cp" class="card calc">
   <h2>Calculadora de estructurados: ¿cuánto ganarías?</h2>
-  <p class="note">Usa la tasa estimada de Rexi con su misma fórmula (interés simple, año de 360 días). Si tu plazo es mayor al del producto, supone que lo renuevas al vencer a la misma tasa, cosa que no está garantizada. No se pueden retirar antes del plazo, así que un plazo menor al del producto no entra en las 10 mejores.</p>
+  <details class="more"><summary>Cómo se calcula</summary><p>Usa la tasa estimada de Rexi con su misma fórmula (interés simple, año de 360 días). Si tu plazo es mayor al del producto, supone que lo renuevas al vencer a la misma tasa, cosa que no está garantizada. No se pueden retirar antes del plazo, así que un plazo menor al del producto no entra en las 10 mejores.</p></details>
   <div class="calc-in">
     <label class="fld"><span class="lbl">Monto a invertir (RD$)</span><input type="number" id="cp-monto" min="0" step="1000" value="100000" inputmode="numeric"></label>
     <label class="fld"><span class="lbl">Plazo</span><span class="row2"><input type="number" id="cp-plazo" min="1" step="1" value="1" inputmode="numeric"><select id="cp-unidad" aria-label="Unidad del plazo"><option value="d">días</option><option value="m">meses</option><option value="a" selected>años</option></select></span></label>
@@ -146,7 +151,7 @@
 
 <section id="lista-puestos" class="card">
   <h2>Los puestos de bolsa</h2>
-  <p class="note">Las columnas de productos cuentan lo que Rexi lista para cada puesto: un guion significa que Rexi no muestra la cantidad, y un cero que no lista ninguno. Que Rexi no lo liste no significa que el puesto no pueda negociarlo en la bolsa: confírmalo con el puesto.</p>
+  <p class="note">Las columnas de productos cuentan lo que Rexi lista para cada puesto: un guion significa que Rexi no muestra la cantidad, y un cero que no lista ninguno.</p><details class="more"><summary>Qué debes saber</summary><p>Que Rexi no lo liste no significa que el puesto no pueda negociarlo en la bolsa: confírmalo con el puesto.</p></details>
   <div class="scroll">
   <table id="tabla-puestos" data-source="puestos" data-row-key="id">
     <thead><tr>
@@ -179,13 +184,13 @@
 
 <section id="ranking-bonos" class="card">
   <h2>Bonos de mayor a menor cupón</h2>
-  <p class="note">Solo los vigentes. El cupón es lo que paga el bono al año sobre su valor nominal: es su rentabilidad si lo compras al valor nominal y lo guardas hasta que vence. En el mercado secundario el precio cambia y con él lo que ganas. A igual cupón, el de vencimiento más cercano va primero.</p>
+  <p class="note">Solo los vigentes.</p><details class="more"><summary>Qué debes saber</summary><p>El cupón es lo que paga el bono al año sobre su valor nominal: es su rentabilidad si lo compras al valor nominal y lo guardas hasta que vence. En el mercado secundario el precio cambia y con él lo que ganas. A igual cupón, el de vencimiento más cercano va primero.</p></details>
   <div class="scroll" id="rank-out" data-source="bonos_estado"></div>
 </section>
 
 <section id="calc-cb" class="card calc">
   <h2>Calculadora de bonos: ¿cuánto ganarías?</h2>
-  <p class="note">Suma los cupones que cobrarías durante tu plazo, comprando al valor nominal y sin reinvertir los cupones. Si el bono vence antes de tu plazo, solo cuenta hasta su vencimiento. El monto se ajusta a múltiplos del valor de unidad y debe cubrir la inversión mínima (RD$1 millón en los del Banco Central). No incluye comisiones del puesto de bolsa.</p>
+  <details class="more"><summary>Cómo se calcula</summary><p>Suma los cupones que cobrarías durante tu plazo, comprando al valor nominal y sin reinvertir los cupones. Si el bono vence antes de tu plazo, solo cuenta hasta su vencimiento. El monto se ajusta a múltiplos del valor de unidad y debe cubrir la inversión mínima (RD$1 millón en los del Banco Central). No incluye comisiones del puesto de bolsa.</p></details>
   <div class="calc-in">
     <label class="fld"><span class="lbl">Monto a invertir (RD$)</span><input type="number" id="cb-monto" min="0" step="1000" value="1000000" inputmode="numeric"></label>
     <label class="fld"><span class="lbl">Plazo</span><span class="row2"><input type="number" id="cb-plazo" min="1" step="1" value="1" inputmode="numeric"><select id="cb-unidad" aria-label="Unidad del plazo"><option value="d">días</option><option value="m">meses</option><option value="a" selected>años</option></select></span></label>
@@ -199,7 +204,7 @@
 
 <section id="lista-bonos" class="card">
   <h2>Bonos en pesos</h2>
-  <p class="note">El cupón es la tasa que paga el bono sobre su valor nominal; no es el rendimiento que obtendrías, que depende del precio al que lo compres, sobre todo en el mercado secundario. Para los bonos del Banco Central Rexi indica una inversión mínima de RD$1 millón; para los de Hacienda no la muestra, solo el valor de la unidad, que aplica en el mercado primario. Los bonos de empresas y bancos no tienen respaldo del Estado y los de deuda subordinada no son depósitos: lee la nota de cada uno abajo. Un bono que ya venció aparece marcado como vencido. Confirma precio y disponibilidad con un puesto de bolsa.</p>
+  <p class="note">El cupón es la tasa que paga el bono sobre su valor nominal; no es el rendimiento que obtendrías, que depende del precio al que lo compres, sobre todo en el mercado secundario.</p><details class="more"><summary>Qué debes saber</summary><p>Para los bonos del Banco Central Rexi indica una inversión mínima de RD$1 millón; para los de Hacienda no la muestra, solo el valor de la unidad, que aplica en el mercado primario. Los bonos de empresas y bancos no tienen respaldo del Estado y los de deuda subordinada no son depósitos: lee la nota de cada uno abajo. Un bono que ya venció aparece marcado como vencido. Confirma precio y disponibilidad con un puesto de bolsa.</p></details>
   <div class="bar"><label class="lbl" for="b-emisor">Emisor</label>
     <select id="b-emisor"><option value="todos">Todos</option><option value="Ministerio de Hacienda">Ministerio de Hacienda</option><option value="Banco Central">Banco Central</option><option value="otros">Empresas y bancos</option></select></div>
   <div class="scroll">
