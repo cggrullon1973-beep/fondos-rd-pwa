@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Inversiones RD</title>
+<meta name="description" content="Fondos de inversión, puestos de bolsa y bonos en República Dominicana, con calculadoras de ganancia. Datos de Rexi actualizados cada mañana.">
+<meta name="theme-color" content="#1d6b5a" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121311" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Inversiones RD">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div class="fx" id="fx-root">
+
+
+<header id="encabezado">
+  <div class="hdr"><h1>Inversiones en RD</h1><button type="button" id="btn-instalar" class="btn" hidden>Instalar app</button></div>
+  <p class="upd" id="upd">Cargando datos…</p>
+  <p class="offline" id="offline" hidden>Sin conexión: estás viendo los últimos datos guardados.</p>
+  <nav class="tabs" role="tablist">
+    <button type="button" role="tab" id="tab-fondos" data-pg="pg-fondos" aria-selected="true">Fondos de inversión</button>
+    <button type="button" role="tab" id="tab-puestos" data-pg="pg-puestos" aria-selected="false">Puestos de bolsa</button>
+    <button type="button" role="tab" id="tab-bonos" data-pg="pg-bonos" aria-selected="false">Bonos</button>
+  </nav>
+</header>
+
+<div id="pg-fondos" class="pg">
+<p class="take">Mejor abierto hoy: <b data-source="resumen" data-field="mejor_abierto" data-row="0">—</b> (<b data-source="resumen" data-field="rent_abierto" data-row="0" data-fmt="pct">—</b>). Mejor cerrado: <b data-source="resumen" data-field="mejor_cerrado" data-row="0">—</b> (<b data-source="resumen" data-field="rent_cerrado" data-row="0" data-fmt="pct">—</b>).</p>
+
+<section id="resumen" class="tiles">
+  <div class="card"><div class="lbl">Mejor fondo abierto</div><div class="big" data-source="resumen" data-field="rent_abierto" data-row="0" data-fmt="pct">—</div><div class="sub" data-source="resumen" data-field="mejor_abierto" data-row="0">—</div></div>
+  <div class="card"><div class="lbl">Mejor fondo cerrado</div><div class="big" data-source="resumen" data-field="rent_cerrado" data-row="0" data-fmt="pct">—</div><div class="sub" data-source="resumen" data-field="mejor_cerrado" data-row="0">—</div></div>
+  <div class="card"><div class="lbl">Tasa de política monetaria</div><div class="big" data-source="tpm" data-field="valor" data-row="0" data-fmt="pct">—</div><div class="sub" data-source="tpm" data-field="nota" data-row="0">—</div></div>
+  <div class="card"><div class="lbl">Fondos listados</div><div class="big" data-source="resumen" data-field="total" data-row="0">—</div><div class="sub"><span data-source="resumen" data-field="abiertos" data-row="0">—</span> abiertos y <span data-source="resumen" data-field="cerrados" data-row="0">—</span> cerrados. Lectura del <span data-source="resumen" data-field="fecha" data-row="0" data-fmt="fecha">—</span>.</div></div>
+</section>
+
+<section id="ranking" class="card">
+  <h2>Los 10 con mayor rentabilidad</h2>
+  <p class="note">Rentabilidad anualizada de los últimos 12 meses, en pesos. Resultados pasados no aseguran resultados futuros.</p>
+  <div class="legend"><span><i class="sw" id="sw-a"></i>Abierto</span><span><i class="sw" id="sw-c"></i>Cerrado</span></div>
+  <div id="top-bars" data-source="top"></div>
+</section>
+
+<section id="calc-cf" class="card calc">
+  <h2>Calculadora de fondos: ¿cuánto ganarías?</h2>
+  <p class="note">Usa la rentabilidad de los últimos 12 meses como si se repitiera, con interés compuesto. Es una estimación: un fondo no garantiza su rentabilidad y la de mañana puede ser otra. Solo entran en las 10 mejores los fondos cuyo aporte mínimo y permanencia encajan con tu monto y plazo.</p>
+  <div class="calc-in">
+    <label class="fld"><span class="lbl">Monto a invertir (RD$)</span><input type="number" id="cf-monto" min="0" step="1000" value="100000" inputmode="numeric"></label>
+    <label class="fld"><span class="lbl">Plazo</span><span class="row2"><input type="number" id="cf-plazo" min="1" step="1" value="1" inputmode="numeric"><select id="cf-unidad" aria-label="Unidad del plazo"><option value="d">días</option><option value="m">meses</option><option value="a" selected>años</option></select></span></label>
+    <label class="fld wide"><span class="lbl">Calcular con</span><select id="cf-prod"><option value="">Las 10 mejores</option></select></label>
+    <label class="chk"><input type="checkbox" id="cf-isr" checked> Descontar retención de ISR (10%)</label>
+  </div>
+  <p class="calc-head" id="cf-head"></p>
+  <div class="scroll" id="cf-out" data-source="fondos"></div>
+  <p class="note" id="cf-cuenta"></p>
+</section>
+
+<section id="detalle" class="card">
+  <h2>Todos los fondos</h2>
+  <p class="note">Cambio frente a la lectura anterior, en puntos porcentuales (pp). Toca un encabezado para ordenar.</p>
+  <div class="bar"><label class="lbl" for="f-tipo">Tipo</label>
+    <select id="f-tipo"><option value="todos">Todos</option><option value="Abierto">Abiertos</option><option value="Cerrado">Cerrados</option></select></div>
+  <div class="scroll">
+  <table id="tabla" data-source="fondos" data-row-key="id">
+    <thead><tr>
+      <th data-field="fondo" data-sort="fondo">Fondo</th>
+      <th data-field="afi" data-sort="afi" class="hide-sm">Administradora</th>
+      <th data-field="tipo" data-sort="tipo">Tipo</th>
+      <th data-field="rent" data-sort="rent" class="num">12 meses</th>
+      <th data-source="cambios" data-field="delta" data-sort="delta" class="num">Cambio</th>
+      <th data-field="permanencia" data-sort="permanencia" class="hide-sm">Permanencia</th>
+      <th data-field="aporte" data-sort="aporte" class="hide-sm">Aporte inicial</th>
+      <th data-field="riesgo" data-sort="riesgo" class="hide-sm">Calificación</th>
+    </tr></thead>
+    <tbody></tbody>
+  </table>
+  </div>
+</section>
+
+<section id="salidas" class="card">
+  <h2>Fondos que salieron del listado</h2>
+  <p class="note">Estaban en la lectura anterior y hoy ya no aparecen en el comparador.</p>
+  <div id="salidas-msg" class="muted"></div>
+  <table id="tabla-salidas" data-source="salidas" data-row-key="id" hidden>
+    <thead><tr>
+      <th data-field="fondo">Fondo</th>
+      <th data-field="afi" class="hide-sm">Administradora</th>
+      <th data-field="rent_prev" class="num">Última lectura</th>
+    </tr></thead>
+    <tbody></tbody>
+  </table>
+</section>
+</div>
+
+<div id="pg-puestos" class="pg" hidden>
+<p class="take">Los puestos de bolsa son los intermediarios autorizados para comprar y vender fondos cerrados, bonos y otros valores en la bolsa. Estos son los que lista Rexi, con los productos que Rexi les asocia.</p>
+
+<section id="resumen-puestos" class="tiles">
+  <div class="card"><div class="lbl">Puestos de bolsa listados</div><div class="big" data-source="resumen_puestos" data-field="total" data-row="0">—</div><div class="sub">Lectura del <span data-source="puestos" data-field="fecha" data-row="0" data-fmt="fecha">—</span></div></div>
+  <div class="card"><div class="lbl">Mayor por activos (RD$ millones)</div><div class="big" data-source="resumen_puestos" data-field="top_activos" data-row="0" data-fmt="num1">—</div><div class="sub" data-source="resumen_puestos" data-field="top_puesto" data-row="0">—</div></div>
+  <div class="card"><div class="lbl">Mejor SBB estimado, en pesos</div><div class="big" data-source="resumen_puestos" data-field="sbb_rent" data-row="0" data-fmt="pct">—</div><div class="sub" data-source="resumen_puestos" data-field="sbb_puesto" data-row="0">—</div></div>
+  <div class="card"><div class="lbl">Mejor SBB con Mutuo estimado, en pesos</div><div class="big" data-source="resumen_puestos" data-field="mutuo_rent" data-row="0" data-fmt="pct">—</div><div class="sub"><span data-source="resumen_puestos" data-field="mutuo_puesto" data-row="0">—</span>. Mayor riesgo.</div></div>
+</section>
+
+<section id="estructurados" class="card">
+  <h2>Productos estructurados de los puestos</h2>
+  <p class="note">Tasas anuales estimadas por Rexi, en pesos, a 120 días salvo que se indique; pueden cambiar sin aviso. En un SBB el puesto vende un título y se compromete a recomprarlo en una fecha y a un precio acordados. En un SBB con Mutuo el puesto toma prestado el título durante el plazo: rinde más, pero hay más riesgo y no hay una garantía que se pueda liquidar si el puesto incumple. Los productos en dólares no se muestran aquí.</p>
+  <div class="bar"><label class="lbl" for="p-tipo">Tipo</label>
+    <select id="p-tipo"><option value="todos">Todos</option><option value="SBB">SBB</option><option value="SBB con Mutuo">SBB con Mutuo</option></select></div>
+  <div class="scroll">
+  <table id="tabla-prod" data-source="prod_puestos" data-row-key="id">
+    <thead><tr>
+      <th data-field="producto" data-sort="producto">Producto</th>
+      <th data-field="puesto" data-sort="puesto">Puesto de bolsa</th>
+      <th data-field="tipo" data-sort="tipo" class="hide-sm">Tipo</th>
+      <th data-field="rent" data-sort="rent" class="num">Tasa anual</th>
+      <th data-field="plazo" data-sort="plazo" class="hide-sm">Plazo</th>
+      <th data-field="minimo" data-sort="minimo_num" class="num">Inversión mínima</th>
+      <th data-field="pago" data-sort="pago" class="hide-sm">Pago</th>
+    </tr></thead>
+    <tbody></tbody>
+  </table>
+  </div>
+</section>
+
+<section id="calc-cp" class="card calc">
+  <h2>Calculadora de estructurados: ¿cuánto ganarías?</h2>
+  <p class="note">Usa la tasa estimada de Rexi con su misma fórmula (interés simple, año de 360 días). Si tu plazo es mayor al del producto, supone que lo renuevas al vencer a la misma tasa, cosa que no está garantizada. No se pueden retirar antes del plazo, así que un plazo menor al del producto no entra en las 10 mejores.</p>
+  <div class="calc-in">
+    <label class="fld"><span class="lbl">Monto a invertir (RD$)</span><input type="number" id="cp-monto" min="0" step="1000" value="100000" inputmode="numeric"></label>
+    <label class="fld"><span class="lbl">Plazo</span><span class="row2"><input type="number" id="cp-plazo" min="1" step="1" value="1" inputmode="numeric"><select id="cp-unidad" aria-label="Unidad del plazo"><option value="d">días</option><option value="m">meses</option><option value="a" selected>años</option></select></span></label>
+    <label class="fld wide"><span class="lbl">Calcular con</span><select id="cp-prod"><option value="">Las 10 mejores</option></select></label>
+    <label class="chk"><input type="checkbox" id="cp-isr" checked> Descontar retención de ISR (10%)</label>
+  </div>
+  <p class="calc-head" id="cp-head"></p>
+  <div class="scroll" id="cp-out" data-source="prod_puestos"></div>
+  <p class="note" id="cp-cuenta"></p>
+</section>
+
+<section id="lista-puestos" class="card">
+  <h2>Los puestos de bolsa</h2>
+  <p class="note">Las columnas de productos cuentan lo que Rexi lista para cada puesto: un guion significa que Rexi no muestra la cantidad, y un cero que no lista ninguno. Que Rexi no lo liste no significa que el puesto no pueda negociarlo en la bolsa: confírmalo con el puesto.</p>
+  <div class="scroll">
+  <table id="tabla-puestos" data-source="puestos" data-row-key="id">
+    <thead><tr>
+      <th data-field="puesto" data-sort="puesto">Puesto de bolsa</th>
+      <th data-field="activos" data-sort="activos" class="num">Activos (RD$ millones)</th>
+      <th data-field="corredores" data-sort="corredores" class="num hide-sm">Corredores</th>
+      <th data-field="calificacion" data-sort="calificacion" class="hide-sm">Calificación de riesgo</th>
+      <th data-field="estructurados" data-sort="estructurados" class="num">Estructurados</th>
+      <th data-field="bonos" data-sort="bonos" class="num">Bonos</th>
+      <th data-field="fondos" data-sort="fondos" class="num">Fondos</th>
+      <th data-field="fideicomisos" data-sort="fideicomisos" class="num hide-sm">Fideicomisos</th>
+      <th data-field="telefono" data-sort="telefono" class="hide-sm">Teléfono</th>
+      <th data-field="web" data-sort="web" class="hide-sm">Sitio web</th>
+    </tr></thead>
+    <tbody></tbody>
+  </table>
+  </div>
+</section>
+</div>
+
+<div id="pg-bonos" class="pg" hidden>
+<p class="take">Bonos en pesos que lista Rexi: casi todos del Ministerio de Hacienda y del Banco Central, más unos pocos de empresas y bancos. Rexi tiene <b data-source="resumen_bonos" data-field="total_rexi" data-row="0">—</b> emisiones vigentes; aquí hay <b data-source="resumen_bonos" data-field="mostradas" data-row="0">—</b>.</p>
+
+<section id="resumen-bonos" class="tiles">
+  <div class="card"><div class="lbl">Emisiones en el tablero</div><div class="big" data-source="resumen_bonos" data-field="mostradas" data-row="0">—</div><div class="sub">Lectura del <span data-source="resumen_bonos" data-field="fecha" data-row="0" data-fmt="fecha">—</span></div></div>
+  <div class="card"><div class="lbl">Mayor cupón de Hacienda (vigentes)</div><div class="big" data-source="resumen_bonos" data-field="h_cupon" data-row="0" data-fmt="pct">—</div><div class="sub" data-source="resumen_bonos" data-field="h_emision" data-row="0">—</div></div>
+  <div class="card"><div class="lbl">Mayor cupón del Banco Central (vigentes)</div><div class="big" data-source="resumen_bonos" data-field="b_cupon" data-row="0" data-fmt="pct">—</div><div class="sub" data-source="resumen_bonos" data-field="b_emision" data-row="0">—</div></div>
+  <div class="card"><div class="lbl">Próximo vencimiento</div><div class="big" data-source="resumen_bonos" data-field="prox_venc" data-row="0" data-fmt="fecha">—</div><div class="sub" data-source="resumen_bonos" data-field="prox_emision" data-row="0">—</div></div>
+</section>
+
+<section id="ranking-bonos" class="card">
+  <h2>Bonos de mayor a menor cupón</h2>
+  <p class="note">Solo los vigentes. El cupón es lo que paga el bono al año sobre su valor nominal: es su rentabilidad si lo compras al valor nominal y lo guardas hasta que vence. En el mercado secundario el precio cambia y con él lo que ganas. A igual cupón, el de vencimiento más cercano va primero.</p>
+  <div class="scroll" id="rank-out" data-source="bonos_estado"></div>
+</section>
+
+<section id="calc-cb" class="card calc">
+  <h2>Calculadora de bonos: ¿cuánto ganarías?</h2>
+  <p class="note">Suma los cupones que cobrarías durante tu plazo, comprando al valor nominal y sin reinvertir los cupones. Si el bono vence antes de tu plazo, solo cuenta hasta su vencimiento. El monto se ajusta a múltiplos del valor de unidad y debe cubrir la inversión mínima (RD$1 millón en los del Banco Central). No incluye comisiones del puesto de bolsa.</p>
+  <div class="calc-in">
+    <label class="fld"><span class="lbl">Monto a invertir (RD$)</span><input type="number" id="cb-monto" min="0" step="1000" value="1000000" inputmode="numeric"></label>
+    <label class="fld"><span class="lbl">Plazo</span><span class="row2"><input type="number" id="cb-plazo" min="1" step="1" value="1" inputmode="numeric"><select id="cb-unidad" aria-label="Unidad del plazo"><option value="d">días</option><option value="m">meses</option><option value="a" selected>años</option></select></span></label>
+    <label class="fld wide"><span class="lbl">Calcular con</span><select id="cb-prod"><option value="">Las 10 mejores</option></select></label>
+    <label class="chk"><input type="checkbox" id="cb-isr" checked> Descontar retención de ISR (10%)</label>
+  </div>
+  <p class="calc-head" id="cb-head"></p>
+  <div class="scroll" id="cb-out" data-source="bonos_estado"></div>
+  <p class="note" id="cb-cuenta"></p>
+</section>
+
+<section id="lista-bonos" class="card">
+  <h2>Bonos en pesos</h2>
+  <p class="note">El cupón es la tasa que paga el bono sobre su valor nominal; no es el rendimiento que obtendrías, que depende del precio al que lo compres, sobre todo en el mercado secundario. Para los bonos del Banco Central Rexi indica una inversión mínima de RD$1 millón; para los de Hacienda no la muestra, solo el valor de la unidad, que aplica en el mercado primario. Los bonos de empresas y bancos no tienen respaldo del Estado y los de deuda subordinada no son depósitos: lee la nota de cada uno abajo. Un bono que ya venció aparece marcado como vencido. Confirma precio y disponibilidad con un puesto de bolsa.</p>
+  <div class="bar"><label class="lbl" for="b-emisor">Emisor</label>
+    <select id="b-emisor"><option value="todos">Todos</option><option value="Ministerio de Hacienda">Ministerio de Hacienda</option><option value="Banco Central">Banco Central</option><option value="otros">Empresas y bancos</option></select></div>
+  <div class="scroll">
+  <table id="tabla-bonos" data-source="bonos_estado" data-row-key="id">
+    <thead><tr>
+      <th data-field="emision" data-sort="emision">Emisión</th>
+      <th data-field="emisor" data-sort="emisor" class="hide-sm">Emisor</th>
+      <th data-field="cupon" data-sort="cupon" class="num">Cupón</th>
+      <th data-field="pago" data-sort="pago" class="hide-sm">Pago</th>
+      <th data-field="vencimiento" data-sort="vencimiento">Vence</th>
+      <th data-field="valor_unidad" data-sort="valor_unidad" class="hide-sm">Valor de unidad</th>
+      <th data-field="minimo" data-sort="minimo" class="hide-sm">Inversión mínima</th>
+      <th data-field="calificacion" data-sort="calificacion" class="hide-sm">Calificación</th>
+    </tr></thead>
+    <tbody></tbody>
+  </table>
+  </div>
+  <p class="note" id="bonos-notas"></p>
+</section>
+</div>
+
+<p class="foot">Fuente: comparador Rexi (rexi.do), que recoge datos de las administradoras, los puestos de bolsa y las emisiones de bonos. Rentabilidad histórica anualizada; confirma cifras, plazos y comisiones con la administradora o el puesto de bolsa antes de invertir. Esto es información de mercado, no asesoría financiera.</p>
+
+
+</div>
+<script src="js/shim.js"></script>
+<script src="js/app.js"></script>
+<script src="js/pwa.js"></script>
+</body>
+</html>

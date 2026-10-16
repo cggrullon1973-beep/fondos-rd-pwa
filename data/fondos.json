@@ -1,0 +1,233 @@
+[
+ {
+  "id": "excel-dinamico",
+  "fondo": "Dinámico Excel (Pesos)",
+  "afi": "EXCEL SAFI",
+  "tipo": "Abierto",
+  "rent": 9.88,
+  "permanencia": "Más de 1 año",
+  "aporte": "RD$20,000",
+  "riesgo": "—",
+  "fecha": "2026-10-15"
+ },
+ {
+  "id": "bhd-plazo-30",
+  "fondo": "BHD Plazo 30 Días",
+  "afi": "BHD Fondos",
+  "tipo": "Abierto",
+  "rent": 9.87,
+  "permanencia": "30 días",
+  "aporte": "RD$1,000",
+  "riesgo": "AAfa",
+  "fecha": "2026-10-15"
+ },
+ {
+  "id": "bhd-plazo-90",
+  "fondo": "BHD Plazo 90 Días",
+  "afi": "BHD Fondos",
+  "tipo": "Abierto",
+  "rent": 9.05,
+  "permanencia": "90 días",
+  "aporte": "RD$100,000",
+  "riesgo": "—",
+  "fecha": "2026-10-15"
+ },
+ {
+  "id": "jmmb-mercado-dinero",
+  "fondo": "JMMB Mercado de Dinero",
+  "afi": "JMMB",
+  "tipo": "Abierto",
+  "rent": 9.0,
+  "permanencia": "Ninguna",
+  "aporte": "RD$10,000",
+  "riesgo": "A-fa",
+  "fecha": "2026-10-15"
+ },
+ {
+  "id": "popular-plazo-30",
+  "fondo": "Plazo 30 Días Pesos Popular",
+  "afi": "AFI Popular",
+  "tipo": "Abierto",
+  "rent": 8.79,
+  "permanencia": "No disponible",
+  "aporte": "No disponible",
+  "riesgo": "—",
+  "fecha": "2026-10-15"
+ },
+ {
+  "id": "bhd-tu-futuro",
+  "fondo": "Tu Futuro",
+  "afi": "BHD Fondos",
+  "tipo": "Abierto",
+  "rent": 8.43,
+  "permanencia": "7 días",
+  "aporte": "RD$50,000",
+  "riesgo": "—",
+  "fecha": "2026-10-15"
+ },
+ {
+  "id": "universal-renta-valores",
+  "fondo": "Renta Valores",
+  "afi": "AFI Universal",
+  "tipo": "Abierto",
+  "rent": 8.26,
+  "permanencia": "90 días",
+  "aporte": "RD$1,000",
+  "riesgo": "—",
+  "fecha": "2026-10-15"
+ },
+ {
+  "id": "reservas-bohio",
+  "fondo": "El Bohío",
+  "afi": "AFI Reservas",
+  "tipo": "Abierto",
+  "rent": 7.98,
+  "permanencia": "90 días",
+  "aporte": "RD$10,000",
+  "riesgo": "—",
+  "fecha": "2026-10-15"
+ },
+ {
+  "id": "universal-renta-futuro",
+  "fondo": "Renta Futuro",
+  "afi": "AFI Universal",
+  "tipo": "Abierto",
+  "rent": 7.83,
+  "permanencia": "360 días",
+  "aporte": "RD$1,000",
+  "riesgo": "—",
+  "fecha": "2026-10-15"
+ },
+ {
+  "id": "reservas-larimar",
+  "fondo": "Larimar",
+  "afi": "AFI Reservas",
+  "tipo": "Abierto",
+  "rent": 7.69,
+  "permanencia": "360 días",
+  "aporte": "RD$10,000",
+  "riesgo": "—",
+  "fecha": "2026-10-15"
+ },
+ {
+  "id": "universal-liquidez",
+  "fondo": "Universal Liquidez",
+  "afi": "AFI Universal",
+  "tipo": "Abierto",
+  "rent": 7.52,
+  "permanencia": "1 día",
+  "aporte": "RD$1,000",
+  "riesgo": "Afa",
+  "fecha": "2026-10-15"
+ },
+ {
+  "id": "popular-liquidez",
+  "fondo": "Renta Fija Liquidez Popular",
+  "afi": "AFI Popular",
+  "tipo": "Abierto",
+  "rent": 7.42,
+  "permanencia": "No disponible",
+  "aporte": "No disponible",
+  "riesgo": "—",
+  "fecha": "2026-10-15"
+ },
+ {
+  "id": "altio-liquidez-i",
+  "fondo": "ALTIO Liquidez I",
+  "afi": "ALTIO SAFI",
+  "tipo": "Abierto",
+  "rent": 7.21,
+  "permanencia": "Ninguna",
+  "aporte": "RD$50,000",
+  "riesgo": "A-fa",
+  "fecha": "2026-10-15"
+ },
+ {
+  "id": "reservas-quisqueya",
+  "fondo": "Quisqueya",
+  "afi": "AFI Reservas",
+  "tipo": "Abierto",
+  "rent": 7.12,
+  "permanencia": "7 días",
+  "aporte": "RD$10,000",
+  "riesgo": "AA-fa",
+  "fecha": "2026-10-15"
+ },
+ {
+  "id": "excel-liquidez",
+  "fondo": "Liquidez Excel (Pesos)",
+  "afi": "EXCEL SAFI",
+  "tipo": "Abierto",
+  "rent": 6.7,
+  "permanencia": "Ninguna",
+  "aporte": "RD$50,000",
+  "riesgo": "—",
+  "fecha": "2026-10-15"
+ },
+ {
+  "id": "jmmb-plazo-90",
+  "fondo": "JMMB Plazo 90 Días",
+  "afi": "JMMB",
+  "tipo": "Abierto",
+  "rent": 6.54,
+  "permanencia": "90 días",
+  "aporte": "RD$10,000",
+  "riesgo": "A-fa",
+  "fecha": "2026-10-15"
+ },
+ {
+  "id": "pioneer-united",
+  "fondo": "Pioneer United Renta Fija",
+  "afi": "Pioneer Funds",
+  "tipo": "Cerrado",
+  "rent": 9.65,
+  "permanencia": "Se negocia en bolsa",
+  "aporte": "1 cuota",
+  "riesgo": "AA-fa",
+  "fecha": "2026-10-15"
+ },
+ {
+  "id": "altio-united-capital",
+  "fondo": "ALTIO-United Capital",
+  "afi": "ALTIO SAFI",
+  "tipo": "Cerrado",
+  "rent": 8.33,
+  "permanencia": "Se negocia en bolsa",
+  "aporte": "1 cuota",
+  "riesgo": "A+fa",
+  "fecha": "2026-10-15"
+ },
+ {
+  "id": "bhd-liquidez-cerrado",
+  "fondo": "BHD Liquidez (Renta Fija Nacional)",
+  "afi": "BHD Fondos",
+  "tipo": "Cerrado",
+  "rent": 7.91,
+  "permanencia": "Se negocia en bolsa",
+  "aporte": "—",
+  "riesgo": "AAfa",
+  "fecha": "2026-10-15"
+ },
+ {
+  "id": "reservas-desarrollo-i",
+  "fondo": "Desarrollo Reservas I",
+  "afi": "AFI Reservas",
+  "tipo": "Cerrado",
+  "rent": 6.87,
+  "permanencia": "Se negocia en bolsa",
+  "aporte": "1 cuota",
+  "riesgo": "BBBfa",
+  "fecha": "2026-10-15"
+ },
+ {
+  "id": "altio-renta-fija",
+  "fondo": "ALTIO Renta Fija",
+  "afi": "ALTIO SAFI",
+  "tipo": "Cerrado",
+  "rent": 3.44,
+  "permanencia": "Se negocia en bolsa",
+  "aporte": "1 cuota",
+  "riesgo": "AA-fa",
+  "fecha": "2026-10-15"
+ }
+]
