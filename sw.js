@@ -1,5 +1,5 @@
 /* Service worker: la app abre sin conexión y muestra los últimos datos guardados. */
-const VERSION = 'inversiones-rd-v1';
+const VERSION = 'inversiones-rd-v2';
 const SHELL = ['./', 'index.html', 'css/app.css', 'js/shim.js', 'js/app.js', 'js/pwa.js', 'manifest.webmanifest',
   'icons/icon-192.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png'];
 
