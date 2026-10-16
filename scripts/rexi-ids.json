@@ -1,0 +1,61 @@
+{
+ "_nota": "Id numérico de Rexi -> id de la PWA. Si Rexi agrega un producto que no está aquí, el script crea un id a partir del nombre; para fijarlo, agrégalo aquí.",
+ "fondos": {
+  "23388": "bhd-plazo-30",
+  "23389": "bhd-plazo-90",
+  "23390": "bhd-tu-futuro",
+  "23397": "universal-renta-valores",
+  "23399": "universal-renta-futuro",
+  "23400": "universal-liquidez",
+  "23404": "excel-liquidez",
+  "23411": "jmmb-mercado-dinero",
+  "23413": "jmmb-plazo-90",
+  "23419": "reservas-quisqueya",
+  "23421": "reservas-bohio",
+  "23422": "reservas-larimar",
+  "24837": "excel-dinamico",
+  "25104": "altio-liquidez-i",
+  "25138": "popular-liquidez",
+  "25706": "popular-plazo-30",
+  "23375": "bhd-liquidez-cerrado",
+  "23407": "altio-renta-fija",
+  "23409": "altio-united-capital",
+  "23416": "pioneer-united",
+  "25059": "reservas-desarrollo-i"
+ },
+ "productos": {
+  "24032": "united-sbb",
+  "24055": "alpha-fwd",
+  "24057": "alpha-plus",
+  "24118": "cci-sbb",
+  "24120": "cci-mutuo",
+  "24142": "parval-sbb",
+  "24144": "parval-mutuo",
+  "24253": "united-mutuo",
+  "24261": "santa-cruz-flexi",
+  "25702": "alpha-fwd-flex",
+  "25704": "alpha-flex"
+ },
+ "puestos": {
+  "23459": "jmmb-pb",
+  "23460": "citinversiones",
+  "23461": "united-capital",
+  "23462": "alpha",
+  "23463": "cci",
+  "23465": "vertex",
+  "23469": "parval",
+  "23470": "excel-pb",
+  "23472": "primma",
+  "23473": "bhd-pb",
+  "23474": "inversiones-popular",
+  "23475": "inversiones-reservas",
+  "23510": "santa-cruz",
+  "25513": "interval",
+  "25514": "capitalia"
+ },
+ "emisores_bonos": {
+  "Capital, Crédito e Inversiones CCI, S.A.": "CCI (Capital, Crédito e Inversiones)",
+  "Banco Múltiple Promerica de la República Dominicana, S.A.": "Banco Promerica",
+  "Banco Múltiple Caribe Internacional, S.A.": "Banco Caribe Internacional"
+ }
+}
