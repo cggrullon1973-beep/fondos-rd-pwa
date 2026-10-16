@@ -6,7 +6,7 @@ PWA estática "Inversiones RD": muestra fondos de inversión, productos estructu
 
 - Sitio estático, sin compilación ni dependencias: `index.html`, `css/app.css`, `js/shim.js` (carga `data/*.json`), `js/app.js` (pestañas, tablas, calculadoras), `js/pwa.js`, `sw.js`.
 - Despliegue: Vercel publica solo cada push a `main` (GitHub cggrullon1973-beep/fondos-rd-pwa).
-- Si cambias archivos de la app (no los de `data/`), sube `VERSION` en `sw.js`; si no, los teléfonos siguen con la versión guardada.
+- Si cambias archivos de la app (no los de `data/`), sube `VERSION` en `sw.js` y el `?v=` de los CSS/JS en `index.html` y en `SHELL` de `sw.js`. Sin eso, quien ya abrió la app puede ver el HTML nuevo con el CSS viejo.
 - Probar en local: `python3 -m http.server 8000` y abrir http://localhost:8000.
 
 ## Actualización diaria (todo en la nube)
