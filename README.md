@@ -16,6 +16,7 @@ sw.js                   service worker (funciona sin conexión)
 manifest.webmanifest    nombre, colores e íconos de la app instalada
 icons/                  íconos
 data/                   los datos (se reemplazan cada día)
+scripts/update-data.mjs lee Rexi y actualiza data/ (lo corre GitHub Actions)
 vercel.json             caché: los datos nunca quedan viejos en el navegador
 ```
 
@@ -38,7 +39,14 @@ Cada vez que cambie algo en el repositorio (por ejemplo, los datos de `data/`), 
 
 ## Actualización diaria de los datos
 
-Los archivos de `data/` tienen el mismo formato que los del tablero de Claude. Para que la app se actualice sola, la tarea programada de cada mañana debe escribir esos archivos en este repositorio. Al hacer el commit, Vercel vuelve a publicar.
+Cada día a las 6:30 a. m. (hora de RD) el workflow `.github/workflows/update-data.yml` corre `scripts/update-data.mjs` en GitHub Actions. El script lee Rexi (el JSON que cada página trae dentro del HTML, sin IA), reescribe `fondos.json`, `fondos_prev.json`, `prod_puestos.json`, `puestos.json`, `bonos_estado.json` y `meta.json`, y si `data/` cambió hace commit y push a `main`; Vercel publica solo.
+
+- Cada parte tiene su control de calidad (mínimo de filas y tasas en rango). Si una parte falla, su archivo queda como estaba, las demás sí se publican y el workflow queda en rojo (GitHub te avisa por correo).
+- Los lunes también lee la ficha de cada puesto (cantidad de productos). Para forzarlo otro día: **Actions → Actualizar datos de Rexi → Run workflow** y marca *fichas*.
+- `scripts/rexi-ids.json` relaciona el id de Rexi con el id de la PWA. Si Rexi agrega un fondo o producto, el script le crea un id a partir del nombre; para fijarlo, agrégalo ahí.
+- `tpm.json` (tasa del Banco Central) no lo toca el script.
+
+Para probarlo sin tocar `data/`: `node scripts/update-data.mjs --out /tmp/salida`.
 
 `data/meta.json` guarda la fecha y hora de la última actualización, que es la que muestra la app.
 

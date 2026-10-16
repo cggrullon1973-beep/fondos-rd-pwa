@@ -1,0 +1,58 @@
+name: Actualizar datos de Rexi
+
+on:
+  schedule:
+    - cron: '30 10 * * *' # 6:30 a. m. en República Dominicana (UTC-4)
+  workflow_dispatch:
+    inputs:
+      fichas:
+        description: 'Leer también las fichas de los puestos (normalmente solo los lunes)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Leer Rexi y escribir data/
+        id: datos
+        # Si una parte falla, el script deja ese archivo como estaba y sale con 1.
+        # Se publica lo que sí pasó y el job se marca como fallido al final.
+        run: |
+          if node scripts/update-data.mjs ${{ inputs.fichas && '--fichas' || '' }}; then
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit y push si data/ cambió
+        run: |
+          if git diff --quiet -- data/; then
+            echo "data/ no cambió; no hay commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git commit -m "Datos del $(TZ=America/Santo_Domingo date +%F)"
+          git push origin HEAD:main || { git pull --rebase origin main && git push origin HEAD:main; }
+
+      - name: Avisar si alguna parte falló
+        if: steps.datos.outputs.ok != 'true'
+        run: |
+          echo "::error::Alguna parte de la lectura de Rexi falló; revisa el resumen. Los archivos de esa parte quedaron como estaban."
+          exit 1
