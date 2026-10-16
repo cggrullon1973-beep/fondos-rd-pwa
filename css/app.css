@@ -74,15 +74,16 @@ input,select,textarea{font-size:16px} /* menos de 16px y el iPhone hace zoom al 
   padding:calc(12px + env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) 12px max(16px,env(safe-area-inset-left));
   background:color-mix(in srgb,var(--bg) 86%,transparent);-webkit-backdrop-filter:saturate(1.4) blur(12px);backdrop-filter:saturate(1.4) blur(12px);
   border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.hdr{display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:0}
+.hdr{flex:1 1 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:0}
 .brand{display:flex;align-items:center;gap:10px;min-width:0}
 .logo{flex:0 0 auto;display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--accent);color:var(--accent-fg)}
 .fx h1{font-size:1.0625rem;font-weight:650;line-height:1.2}
 .upd{margin:2px 0 0;font-size:var(--fs-xs);color:var(--muted);overflow:hidden;text-overflow:ellipsis}
 .offline{margin:0;padding:10px 12px;border-radius:var(--r);font-size:var(--fs-sm);
   background:color-mix(in srgb,var(--warn) 12%,var(--panel));border:1px solid color-mix(in srgb,var(--warn) 30%,transparent);color:var(--fg)}
-.btn{font:inherit;font-size:var(--fs-sm);font-weight:600;height:36px;padding:0 14px;border-radius:10px;border:0;
-  background:var(--accent);color:var(--accent-fg);cursor:pointer;white-space:nowrap;transition:transform 120ms var(--ease-out)}
+.btn{flex:0 0 auto;font:inherit;font-size:var(--fs-sm);font-weight:600;height:34px;padding:0 12px;border-radius:9px;
+  border:1px solid color-mix(in srgb,var(--accent) 35%,transparent);background:var(--accent-soft);color:var(--accent);
+  cursor:pointer;white-space:nowrap;transition:transform 120ms var(--ease-out)}
 .btn:active{transform:scale(.97)}
 
 /* Secciones: control segmentado (PC) */
