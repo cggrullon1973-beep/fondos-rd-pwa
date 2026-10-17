@@ -8,7 +8,7 @@
   "permanencia": "Más de 1 año",
   "aporte": "RD$20,000",
   "riesgo": "—",
-  "fecha": "2026-10-16"
+  "fecha": "2026-10-17"
  },
  {
   "id": "bhd-plazo-30",
@@ -19,7 +19,7 @@
   "permanencia": "30 días",
   "aporte": "RD$1,000",
   "riesgo": "AAfa",
-  "fecha": "2026-10-16"
+  "fecha": "2026-10-17"
  },
  {
   "id": "bhd-plazo-90",
@@ -30,7 +30,7 @@
   "permanencia": "90 días",
   "aporte": "RD$100,000",
   "riesgo": "—",
-  "fecha": "2026-10-16"
+  "fecha": "2026-10-17"
  },
  {
   "id": "jmmb-mercado-dinero",
@@ -41,7 +41,7 @@
   "permanencia": "Ninguna",
   "aporte": "RD$10,000",
   "riesgo": "A-fa",
-  "fecha": "2026-10-16"
+  "fecha": "2026-10-17"
  },
  {
   "id": "popular-plazo-30",
@@ -52,7 +52,7 @@
   "permanencia": "No disponible",
   "aporte": "No disponible",
   "riesgo": "—",
-  "fecha": "2026-10-16"
+  "fecha": "2026-10-17"
  },
  {
   "id": "bhd-tu-futuro",
@@ -63,7 +63,7 @@
   "permanencia": "7 días",
   "aporte": "RD$50,000",
   "riesgo": "—",
-  "fecha": "2026-10-16"
+  "fecha": "2026-10-17"
  },
  {
   "id": "universal-renta-valores",
@@ -74,18 +74,7 @@
   "permanencia": "90 días",
   "aporte": "RD$1,000",
   "riesgo": "—",
-  "fecha": "2026-10-16"
- },
- {
-  "id": "reservas-bohio",
-  "fondo": "El Bohío",
-  "afi": "AFI Reservas",
-  "tipo": "Abierto",
-  "rent": 7.98,
-  "permanencia": "90 días",
-  "aporte": "RD$10,000",
-  "riesgo": "—",
-  "fecha": "2026-10-16"
+  "fecha": "2026-10-17"
  },
  {
   "id": "universal-renta-futuro",
@@ -96,18 +85,7 @@
   "permanencia": "360 días",
   "aporte": "RD$1,000",
   "riesgo": "—",
-  "fecha": "2026-10-16"
- },
- {
-  "id": "reservas-larimar",
-  "fondo": "Larimar",
-  "afi": "AFI Reservas",
-  "tipo": "Abierto",
-  "rent": 7.69,
-  "permanencia": "360 días",
-  "aporte": "RD$10,000",
-  "riesgo": "—",
-  "fecha": "2026-10-16"
+  "fecha": "2026-10-17"
  },
  {
   "id": "universal-liquidez",
@@ -118,7 +96,7 @@
   "permanencia": "1 día",
   "aporte": "RD$1,000",
   "riesgo": "Afa",
-  "fecha": "2026-10-16"
+  "fecha": "2026-10-17"
  },
  {
   "id": "popular-liquidez",
@@ -129,7 +107,18 @@
   "permanencia": "No disponible",
   "aporte": "No disponible",
   "riesgo": "—",
-  "fecha": "2026-10-16"
+  "fecha": "2026-10-17"
+ },
+ {
+  "id": "reservas-bohio",
+  "fondo": "El Bohío",
+  "afi": "AFI Reservas",
+  "tipo": "Abierto",
+  "rent": 7.31,
+  "permanencia": "90 días",
+  "aporte": "RD$10,000",
+  "riesgo": "—",
+  "fecha": "2026-10-17"
  },
  {
   "id": "altio-liquidez-i",
@@ -140,18 +129,29 @@
   "permanencia": "Ninguna",
   "aporte": "RD$50,000",
   "riesgo": "A-fa",
-  "fecha": "2026-10-16"
+  "fecha": "2026-10-17"
+ },
+ {
+  "id": "reservas-larimar",
+  "fondo": "Larimar",
+  "afi": "AFI Reservas",
+  "tipo": "Abierto",
+  "rent": 7.19,
+  "permanencia": "360 días",
+  "aporte": "RD$10,000",
+  "riesgo": "—",
+  "fecha": "2026-10-17"
  },
  {
   "id": "reservas-quisqueya",
   "fondo": "Quisqueya",
   "afi": "AFI Reservas",
   "tipo": "Abierto",
-  "rent": 7.12,
+  "rent": 7.03,
   "permanencia": "7 días",
   "aporte": "RD$10,000",
   "riesgo": "AA-fa",
-  "fecha": "2026-10-16"
+  "fecha": "2026-10-17"
  },
  {
   "id": "excel-liquidez",
@@ -162,7 +162,7 @@
   "permanencia": "Ninguna",
   "aporte": "RD$50,000",
   "riesgo": "—",
-  "fecha": "2026-10-16"
+  "fecha": "2026-10-17"
  },
  {
   "id": "jmmb-plazo-90",
@@ -173,7 +173,7 @@
   "permanencia": "90 días",
   "aporte": "RD$10,000",
   "riesgo": "A-fa",
-  "fecha": "2026-10-16"
+  "fecha": "2026-10-17"
  },
  {
   "id": "pioneer-united",
@@ -184,7 +184,7 @@
   "permanencia": "Se negocia en bolsa",
   "aporte": "1 cuota",
   "riesgo": "AA-fa",
-  "fecha": "2026-10-16"
+  "fecha": "2026-10-17"
  },
  {
   "id": "altio-united-capital",
@@ -195,7 +195,7 @@
   "permanencia": "Se negocia en bolsa",
   "aporte": "1 cuota",
   "riesgo": "A+fa",
-  "fecha": "2026-10-16"
+  "fecha": "2026-10-17"
  },
  {
   "id": "bhd-liquidez-cerrado",
@@ -206,18 +206,18 @@
   "permanencia": "Se negocia en bolsa",
   "aporte": "—",
   "riesgo": "AAfa",
-  "fecha": "2026-10-16"
+  "fecha": "2026-10-17"
  },
  {
   "id": "reservas-desarrollo-i",
   "fondo": "Desarrollo Reservas I",
   "afi": "AFI Reservas",
   "tipo": "Cerrado",
-  "rent": 6.87,
+  "rent": 6.86,
   "permanencia": "Se negocia en bolsa",
   "aporte": "1 cuota",
   "riesgo": "BBBfa",
-  "fecha": "2026-10-16"
+  "fecha": "2026-10-17"
  },
  {
   "id": "altio-renta-fija",
@@ -228,6 +228,6 @@
   "permanencia": "Se negocia en bolsa",
   "aporte": "1 cuota",
   "riesgo": "AA-fa",
-  "fecha": "2026-10-16"
+  "fecha": "2026-10-17"
  }
 ]
