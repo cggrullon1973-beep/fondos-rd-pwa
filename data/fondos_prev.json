@@ -8,7 +8,7 @@
   "permanencia": "Más de 1 año",
   "aporte": "RD$20,000",
   "riesgo": "—",
-  "fecha": "2026-10-21"
+  "fecha": "2026-10-22"
  },
  {
   "id": "bhd-plazo-30",
@@ -19,7 +19,7 @@
   "permanencia": "30 días",
   "aporte": "RD$1,000",
   "riesgo": "AAfa",
-  "fecha": "2026-10-21"
+  "fecha": "2026-10-22"
  },
  {
   "id": "bhd-plazo-90",
@@ -30,7 +30,7 @@
   "permanencia": "90 días",
   "aporte": "RD$100,000",
   "riesgo": "—",
-  "fecha": "2026-10-21"
+  "fecha": "2026-10-22"
  },
  {
   "id": "jmmb-mercado-dinero",
@@ -41,7 +41,7 @@
   "permanencia": "Ninguna",
   "aporte": "RD$10,000",
   "riesgo": "A-fa",
-  "fecha": "2026-10-21"
+  "fecha": "2026-10-22"
  },
  {
   "id": "popular-plazo-30",
@@ -52,7 +52,7 @@
   "permanencia": "No disponible",
   "aporte": "No disponible",
   "riesgo": "—",
-  "fecha": "2026-10-21"
+  "fecha": "2026-10-22"
  },
  {
   "id": "bhd-tu-futuro",
@@ -63,7 +63,7 @@
   "permanencia": "7 días",
   "aporte": "RD$50,000",
   "riesgo": "—",
-  "fecha": "2026-10-21"
+  "fecha": "2026-10-22"
  },
  {
   "id": "universal-renta-valores",
@@ -74,7 +74,7 @@
   "permanencia": "90 días",
   "aporte": "RD$1,000",
   "riesgo": "—",
-  "fecha": "2026-10-21"
+  "fecha": "2026-10-22"
  },
  {
   "id": "universal-renta-futuro",
@@ -85,7 +85,7 @@
   "permanencia": "360 días",
   "aporte": "RD$1,000",
   "riesgo": "—",
-  "fecha": "2026-10-21"
+  "fecha": "2026-10-22"
  },
  {
   "id": "universal-liquidez",
@@ -96,7 +96,7 @@
   "permanencia": "1 día",
   "aporte": "RD$1,000",
   "riesgo": "Afa",
-  "fecha": "2026-10-21"
+  "fecha": "2026-10-22"
  },
  {
   "id": "popular-liquidez",
@@ -107,18 +107,7 @@
   "permanencia": "No disponible",
   "aporte": "No disponible",
   "riesgo": "—",
-  "fecha": "2026-10-21"
- },
- {
-  "id": "reservas-bohio",
-  "fondo": "El Bohío",
-  "afi": "AFI Reservas",
-  "tipo": "Abierto",
-  "rent": 7.24,
-  "permanencia": "90 días",
-  "aporte": "RD$10,000",
-  "riesgo": "—",
-  "fecha": "2026-10-21"
+  "fecha": "2026-10-22"
  },
  {
   "id": "altio-liquidez-i",
@@ -129,29 +118,29 @@
   "permanencia": "Ninguna",
   "aporte": "RD$50,000",
   "riesgo": "A-fa",
-  "fecha": "2026-10-21"
+  "fecha": "2026-10-22"
  },
  {
   "id": "reservas-quisqueya",
   "fondo": "Quisqueya",
   "afi": "AFI Reservas",
   "tipo": "Abierto",
-  "rent": 7.01,
+  "rent": 6.99,
   "permanencia": "7 días",
   "aporte": "RD$10,000",
   "riesgo": "AA-fa",
-  "fecha": "2026-10-21"
+  "fecha": "2026-10-22"
  },
  {
-  "id": "reservas-larimar",
-  "fondo": "Larimar",
+  "id": "reservas-bohio",
+  "fondo": "El Bohío",
   "afi": "AFI Reservas",
   "tipo": "Abierto",
-  "rent": 7,
-  "permanencia": "360 días",
+  "rent": 6.74,
+  "permanencia": "90 días",
   "aporte": "RD$10,000",
   "riesgo": "—",
-  "fecha": "2026-10-21"
+  "fecha": "2026-10-22"
  },
  {
   "id": "excel-liquidez",
@@ -162,7 +151,18 @@
   "permanencia": "Ninguna",
   "aporte": "RD$50,000",
   "riesgo": "—",
-  "fecha": "2026-10-21"
+  "fecha": "2026-10-22"
+ },
+ {
+  "id": "reservas-larimar",
+  "fondo": "Larimar",
+  "afi": "AFI Reservas",
+  "tipo": "Abierto",
+  "rent": 6.65,
+  "permanencia": "360 días",
+  "aporte": "RD$10,000",
+  "riesgo": "—",
+  "fecha": "2026-10-22"
  },
  {
   "id": "jmmb-plazo-90",
@@ -173,7 +173,7 @@
   "permanencia": "90 días",
   "aporte": "RD$10,000",
   "riesgo": "A-fa",
-  "fecha": "2026-10-21"
+  "fecha": "2026-10-22"
  },
  {
   "id": "pioneer-united",
@@ -184,7 +184,7 @@
   "permanencia": "Se negocia en bolsa",
   "aporte": "1 cuota",
   "riesgo": "AA-fa",
-  "fecha": "2026-10-21"
+  "fecha": "2026-10-22"
  },
  {
   "id": "altio-united-capital",
@@ -195,7 +195,7 @@
   "permanencia": "Se negocia en bolsa",
   "aporte": "1 cuota",
   "riesgo": "A+fa",
-  "fecha": "2026-10-21"
+  "fecha": "2026-10-22"
  },
  {
   "id": "bhd-liquidez-cerrado",
@@ -206,18 +206,18 @@
   "permanencia": "Se negocia en bolsa",
   "aporte": "—",
   "riesgo": "AAfa",
-  "fecha": "2026-10-21"
+  "fecha": "2026-10-22"
  },
  {
   "id": "reservas-desarrollo-i",
   "fondo": "Desarrollo Reservas I",
   "afi": "AFI Reservas",
   "tipo": "Cerrado",
-  "rent": 6.85,
+  "rent": 6.84,
   "permanencia": "Se negocia en bolsa",
   "aporte": "1 cuota",
   "riesgo": "BBBfa",
-  "fecha": "2026-10-21"
+  "fecha": "2026-10-22"
  },
  {
   "id": "altio-renta-fija",
@@ -228,6 +228,6 @@
   "permanencia": "Se negocia en bolsa",
   "aporte": "1 cuota",
   "riesgo": "AA-fa",
-  "fecha": "2026-10-21"
+  "fecha": "2026-10-22"
  }
 ]
