@@ -10,7 +10,7 @@
   "minimo_num": 90000,
   "pago": "Mensual",
   "moneda": "Pesos (RD$)",
-  "fecha": "2026-10-27"
+  "fecha": "2026-10-28"
  },
  {
   "id": "alpha-fwd",
@@ -23,7 +23,7 @@
   "minimo_num": 90000,
   "pago": "A vencimiento",
   "moneda": "Pesos (RD$)",
-  "fecha": "2026-10-27"
+  "fecha": "2026-10-28"
  },
  {
   "id": "cci-sbb",
@@ -36,7 +36,7 @@
   "minimo_num": 500000,
   "pago": "A vencimiento",
   "moneda": "Pesos (RD$)",
-  "fecha": "2026-10-27"
+  "fecha": "2026-10-28"
  },
  {
   "id": "united-sbb",
@@ -49,7 +49,7 @@
   "minimo_num": 50000,
   "pago": "A vencimiento",
   "moneda": "Pesos (RD$)",
-  "fecha": "2026-10-27"
+  "fecha": "2026-10-28"
  },
  {
   "id": "parval-sbb",
@@ -62,7 +62,7 @@
   "minimo_num": 10000,
   "pago": "A vencimiento",
   "moneda": "Pesos (RD$)",
-  "fecha": "2026-10-27"
+  "fecha": "2026-10-28"
  },
  {
   "id": "parval-mutuo",
@@ -75,7 +75,7 @@
   "minimo_num": 10000,
   "pago": "A vencimiento",
   "moneda": "Pesos (RD$)",
-  "fecha": "2026-10-27"
+  "fecha": "2026-10-28"
  },
  {
   "id": "united-mutuo",
@@ -88,7 +88,7 @@
   "minimo_num": 50000,
   "pago": "A vencimiento",
   "moneda": "Pesos (RD$)",
-  "fecha": "2026-10-27"
+  "fecha": "2026-10-28"
  },
  {
   "id": "alpha-plus",
@@ -101,7 +101,7 @@
   "minimo_num": 90000,
   "pago": "A vencimiento",
   "moneda": "Pesos (RD$)",
-  "fecha": "2026-10-27"
+  "fecha": "2026-10-28"
  },
  {
   "id": "alpha-flex",
@@ -114,7 +114,7 @@
   "minimo_num": 90000,
   "pago": "Mensual",
   "moneda": "Pesos (RD$)",
-  "fecha": "2026-10-27"
+  "fecha": "2026-10-28"
  },
  {
   "id": "cci-mutuo",
@@ -127,7 +127,7 @@
   "minimo_num": 500000,
   "pago": "A vencimiento",
   "moneda": "Pesos (RD$)",
-  "fecha": "2026-10-27"
+  "fecha": "2026-10-28"
  },
  {
   "id": "santa-cruz-flexi",
@@ -140,6 +140,6 @@
   "minimo_num": 100000,
   "pago": "A vencimiento",
   "moneda": "Pesos (RD$)",
-  "fecha": "2026-10-27"
+  "fecha": "2026-10-28"
  }
 ]
